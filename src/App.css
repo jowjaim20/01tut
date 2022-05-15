@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {
@@ -35,4 +40,45 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+header {
+  background-color: cadetblue;
+  min-width: 50rem;
+  border: 2px solid black;
+}
+
+footer {
+  background-color: cadetblue;
+  min-width: 50rem;
+  border: 2px solid black;
+}
+
+.grocery__app {
+  min-height: 50rem;
+  min-width: 50rem;
+}
+
+.additem {
+}
+.additem__input {
+  width: 90%;
+}
+.additem__button {
+}
+
+.item {
+  display: flex;
+
+  align-items: center;
+}
+.item__input {
+}
+.item__name {
+  flex: 0 0 80%;
+}
+.item__name-checked {
+  text-decoration: line-through;
+}
+.item__delete {
 }
