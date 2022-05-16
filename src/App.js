@@ -1,17 +1,29 @@
 import "./App.css";
 import Header from "./Header";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "./Footer";
 import GroceryApp from "./GroceryApp";
 
 function App() {
-  const [items, setItems] = useState([
-    { id: 1, name: "Joel", bool: false },
-    { id: 2, name: "Jaim", bool: true },
-    { id: 3, name: "Geres", bool: false },
-  ]);
+const API_URL = "http://localhost:3500/items";
+  const [items, setItems] = useState([]);
   const [newItem, setNewItem] = useState([]);
   const [searchItems, setSearchItems] = useState("");
+  
+  useEffect(()=>{
+  	
+  		const fetchItems = async () =>{
+  			try {
+  				const response= await fetch(API_URL);
+  				const data = await response.json();
+  				console.log(data);
+  				setItems(data);
+  			 }	catch (err) {
+  			 	console.log(err.stack);
+  			 }
+  		}
+  		fetchItems();
+  },[]);
 
   const addNewItem = (addedItem) => {
     const randomID = Math.floor(Math.random() * 10000000);
@@ -22,6 +34,7 @@ function App() {
       bool: false,
     };
     setItems([...items, newObject]);
+    setNewItem('')
   };
   const deleteItem = (id) => {
     const newObject = items.filter((item) => item.id !== id);

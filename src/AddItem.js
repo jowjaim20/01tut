@@ -1,6 +1,9 @@
 const AddItem = ({ newItem, setNewItem, addNewItem }) => {
   return (
-    <form className="additem">
+    <form className="additem" onSubmit={(e) => {
+          e.preventDefault();
+          addNewItem(newItem);
+        }}>
       <input
         className="additem__input"
         value={newItem}
@@ -11,10 +14,7 @@ const AddItem = ({ newItem, setNewItem, addNewItem }) => {
       <button
         className="additem__button"
         type="submit"
-        onClick={(e) => {
-          e.preventDefault();
-          addNewItem(newItem);
-        }}
+        
       >
         +
       </button>
