@@ -5,7 +5,7 @@ const Item = ({ item, deleteItem, triggerCheck }) => {
         className="item__input"
         type="checkbox"
         checked={item.bool}
-        onClick={() => triggerCheck(item.id)}
+        onChange={() => triggerCheck(item.id)}
       />
       <p className={`item__name ${item.bool ? "item__name-checked" : null}`}>
         {item.name}

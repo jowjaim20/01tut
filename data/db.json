@@ -1,13 +1,9 @@
 {
-	"items":[
-		{
-		"id": 1, "name": "Joel", "bool": false
-	},
-		{
-			"id": 2, "name": "Cite", "bool": true
-		},
-		{
-			"id": 3, "name": "Geres", "bool": false
-		}]
-
+  "items": [
+    {
+      "id": 1550771,
+      "name": "Jgfg",
+      "bool": false
+    }
+  ]
 }
